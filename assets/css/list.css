@@ -1,0 +1,40 @@
+
+
+/* Les descendants de rang impair sont stylés avec une couleur     */
+tbody:nth-child(odd) {
+     background-color : #CED4E5; 
+    }
+/* Les descendants de rang pair sont stylés avec une autre couleur */
+tbody:nth-child(even){ 
+    background-color : #E8EBF5; 
+}
+th {
+     background-color : #e1f810; padding:1em; 
+     width: 100px;
+}
+td {
+padding:1.5em; 
+
+}
+
+
+
+/* Les descendants de rang impair sont stylés avec une couleur     */
+tbody:nth-child(odd) {
+     background-color : #CED4E5; 
+    }
+/* Les descendants de rang pair sont stylés avec une autre couleur */
+tbody:nth-child(even){ 
+    background-color : #E8EBF5; 
+}
+th {
+     background-color : #e1f810; padding:1em; 
+     width: 150px;
+}
+td {
+padding:0.5em; 
+
+}
+
+
+

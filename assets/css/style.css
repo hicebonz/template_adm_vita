@@ -1,0 +1,782 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue:  #0b4400;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #050000;
+  --black2: #999;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.main_masque{
+  width: 100%;
+  height: 700px;
+  opacity: 0.7;
+  background-color: #000000;
+  position: absolute;
+}
+/* =============== popup ================ */
+.popup_edit{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_edit .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  background-color: #091300;
+}
+
+.popup_delete{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_delete .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+
+.popup_desactived{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_desactived .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+
+.popup_reactived{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_reactived .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+
+.popup_oct_adm{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_oct_adm .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+
+.popup_rtr_adm{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.popup_rtr_adm .edit{
+  width: 600px;
+  height: 300px;
+  background-color: #98da8b;
+}
+/* =============== Navigation ================ */
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation .profil{
+  margin-left: 85px;
+  width: 110px;
+  height:110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.navigation .profil .img{
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin-left: 18px;
+  border-style:none ;
+}
+.navigation .profil h4{
+  margin-left: 19px;
+  color: #ffffff;
+  margin-top: 10px;
+  border: none;
+  
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: fixed;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #bdb5b5;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.login{
+  text-decoration: none;
+  padding: 10px;
+  background-color: #0b4400;
+  color: #f5f5f5;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================= top ====================== */
+.top {
+  background-color: #ffffff;
+  width: auto;
+  height: 270px;
+  display: flex;
+  flex-direction: row;
+}
+.top .register{
+  background-color: #ffffff;
+  width: 65%;
+  height: 250px;
+  margin: 10px;
+  box-shadow: 0px 0px 9px rgb(170, 169, 169);
+}
+.top .register .new_acount{
+    position: relative;
+    background-color: #e5f7e6;
+    width: 100%;
+    height: 250px; 
+}
+.top .register .new_acount button{
+    width: 100px;
+    height: 25px;
+    border-radius: 0;
+    border: none;
+    background-color: #0b4400;
+    color: #ffffff;
+    transition: 0.3s;
+}
+.top .register .new_acount button:hover{
+  background-color: #51ff00;
+  color: #000000;
+  cursor: pointer;
+}
+.top .register .acount{
+  position: relative;
+  background-color:  #e5f7e6;
+  width: 100%;
+  height: 250px;
+}
+.top .register .acount .new_{
+  width: 100px;
+  height: 25px;
+  border-radius: 0;
+  border: none;
+  background-color: #0b4400;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.top .register .acount .new_:hover{
+  background-color: #51ff00;
+  color: #000000;
+  cursor: pointer;
+}
+.defult{
+  display: none;
+}
+
+
+/*Tableau*/
+.insert{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.insert ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 20px;
+
+}
+.insert ul input{
+  margin: 8px;
+  text-decoration: none;
+  width: 200px;
+  height: 25px;
+}
+.insert h2{
+  margin-bottom: 5px;
+  margin-right: 190px;
+}
+.insert ul li{
+  list-style-type: none;
+}
+.insert button{
+  width: 100px;
+  height: 35px;
+  border-radius: 0;
+  border: none;
+  background-color: #0b4400;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-right: 190px;
+}
+
+
+
+/*form_bloc*/
+.insert_bloc{
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.insert_bloc ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 70px;
+
+
+}
+.insert_bloc ul input{
+  margin: 8px;
+  text-decoration: none;
+  width: 200px;
+  height: 25px;
+
+}
+.insert_bloc h2{
+  margin-bottom: 10px;
+
+
+}
+.insert_bloc ul li{
+  list-style-type: none;
+
+}
+.insert_bloc button{
+  width: 100px;
+  height: 35px;
+  border-radius: 0;
+  border: none;
+  background-color: #0b4400;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: transform .4s; 
+}
+
+.top .list{
+  background-color:  #e5f7e6;
+  width: 35%;
+  height: 250px;
+  margin: 10px;
+  box-shadow: 0px 0px 9px rgb(170, 169, 169);
+}
+
+
+
+/* ================== option_bar ============== */
+.option_bar{
+    width: auto;
+    height: 55px;
+    background-color:#4b8340;
+    box-shadow: 0px 0px 7px rgb(87, 86, 86);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+  }
+.option_bar .option{
+    display: flex;
+    flex-direction: row;
+}
+.option_bar .search{
+  display: flex;
+  flex-direction: row;
+}
+.option_bar .search input{
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+}
+.option_bar .search button{
+  width: 80px;
+  height: 30px;
+}
+#icon{
+  margin-right: 30px;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  background-color: #122700;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#icon:hover{
+  background-color: #fffb00;
+  color: #050000;
+  transition: 0.5s;
+}
+/* ================== table ============== */
+.table{
+  width: auto;
+  height: 250px;
+  background-color: rgb(101, 168, 101);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* ================== Order Details List ============== */
+
+.details {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  height: 50px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}  
+
+
+
+
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.cardHeader .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td {
+  font-weight: 600;
+}
+.details .recentOrders table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentOrders .test{
+  color: #f00;
+}
+
+.details .recentOrders table tr:last-child {
+  border-bottom: none;
+}
+.details .recentOrders table tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.details .recentOrders table tr td {
+  padding: 10px;
+}
+.details .recentOrders table tr td:last-child {
+  text-align: end;
+}
+.details .recentOrders table tr td:nth-child(2) {
+  text-align: end;
+}
+.details .recentOrders table tr td:nth-child(3) {
+  text-align: center;
+}
+.status.delivered {
+  padding: 2px 4px;
+  background: #8de02c;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.pending {
+  padding: 2px 4px;
+  background: #e9b10a;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.return {
+  padding: 2px 4px;
+  background: #f00;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.inProgress {
+  padding: 2px 4px;
+  background: #1795ce;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.recentCustomers {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.recentCustomers .imgBx {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.recentCustomers .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recentCustomers table tr td {
+  padding: 12px 10px;
+}
+.recentCustomers table tr td h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+.recentCustomers table tr td h4 span {
+  font-size: 14px;
+  color: var(--black2);
+}
+.recentCustomers table tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.recentCustomers table tr:hover td h4 span {
+  color: var(--white);
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
